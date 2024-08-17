@@ -4,7 +4,15 @@
 #include <QDebug>
 
 GestorReservas::GestorReservas() {
+
+    mesas.append(Mesa(1, 4, true));
+    mesas.append(Mesa(2, 2, true));
+    mesas.append(Mesa(3, 6, true));
     cargarMesasDesdeArchivo("mesas.txt");
+}
+
+QList<Mesa> GestorReservas::getMesas() const {
+    return mesas;
 }
 
 void GestorReservas::cargarMesasDesdeArchivo(const QString &nombreArchivo) {

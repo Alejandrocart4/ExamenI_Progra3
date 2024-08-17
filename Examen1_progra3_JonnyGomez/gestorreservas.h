@@ -20,6 +20,9 @@ public:
     bool eliminarMesa(int mesaId);
     QList<Reserva> obtenerTodasReservas() const;
 
+    QList<Mesa> getMesas() const;
+
+
 private:
     QList<Reserva> reservas;
     QList<Mesa> mesas;
