@@ -11,16 +11,6 @@ Reserva::Reserva(const QString &nombreCliente, const QString &numeroContacto, in
     referencia = QUuid::createUuid().toString(); // Genera un identificador único
 }
 
-QString Reserva::getReferencia() const { return referencia; }
-int Reserva::getMesaId() const { return mesaId; }
-QDateTime Reserva::getFechaHora() const { return fechaHora; }
-QString Reserva::getNombreCliente() const { return nombreCliente; }
-QString Reserva::getNumeroContacto() const { return numeroContacto; }
-
-void Reserva::setNombreCliente(const QString &nombreCliente) { this->nombreCliente = nombreCliente; }
-void Reserva::setNumeroContacto(const QString &numeroContacto) { this->numeroContacto = numeroContacto; }
-void Reserva::setMesaId(int mesaId) { this->mesaId = mesaId; }
-void Reserva::setFechaHora(const QDateTime &fechaHora) { this->fechaHora = fechaHora; }
 
 bool GestorReservas::modificarReserva(const QString &referencia, const Reserva &reservaModificada) {
     // Buscar la reserva existente por referencia
