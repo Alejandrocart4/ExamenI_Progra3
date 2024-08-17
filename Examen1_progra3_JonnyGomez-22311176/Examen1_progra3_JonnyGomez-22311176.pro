@@ -13,13 +13,13 @@ SOURCES += \
     main.cpp \
     cframe.cpp \
     mesa.cpp \
-    reserva.cpp
+    reservacion.cpp
 
 HEADERS += \
     cframe.h \
     gestorreservas.h \
     mesa.h \
-    reserva.h
+    reservacion.h
 
 FORMS += \
     cframe.ui
