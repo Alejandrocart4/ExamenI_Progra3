@@ -1,5 +1,6 @@
 #include "Reserva.h"
 #include <QUuid>
+#include "GestorReservas.h"
 
 Reserva::Reserva(QString referencia, int mesaId, QDateTime fechaHora, QString nombreCliente, QString numeroContacto)
     : referencia(referencia), mesaId(mesaId), fechaHora(fechaHora),
@@ -20,3 +21,24 @@ void Reserva::setNombreCliente(const QString &nombreCliente) { this->nombreClien
 void Reserva::setNumeroContacto(const QString &numeroContacto) { this->numeroContacto = numeroContacto; }
 void Reserva::setMesaId(int mesaId) { this->mesaId = mesaId; }
 void Reserva::setFechaHora(const QDateTime &fechaHora) { this->fechaHora = fechaHora; }
+
+bool GestorReservas::modificarReserva(const QString &referencia, const Reserva &reservaModificada) {
+    // Buscar la reserva existente por referencia
+    for (int i = 0; i < reservas.size(); ++i) {
+        if (reservas[i].getReferencia() == referencia) {
+            // Modificar la reserva encontrada
+            reservas[i] = reservaModificada;
+            return true; // Modificación exitosa
+        }
+    }
+    return false; // No se encontró la reserva con la referencia dada
+}
+
+Reserva* GestorReservas::obtenerReserva(const QString &referencia) {
+    for (int i = 0; i < reservas.size(); ++i) {
+        if (reservas[i].getReferencia() == referencia) {
+            return &reservas[i];
+        }
+    }
+    return nullptr; // No se encontró la reserva con la referencia dada
+}

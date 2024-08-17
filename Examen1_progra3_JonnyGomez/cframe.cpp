@@ -100,30 +100,22 @@ void cframe::on_btnConfirmarAgregarReserva_clicked()
 
 void cframe::on_btnConfirmarModificarReserva_clicked()
 {
-    QString referencia = ui->txtReferenciaReserva_2->text();  // Asumimos que tienes un campo para la referencia
+    /*QString referencia = ui->txtReferenciaReserva_2->text();  // Asumimos que tienes un campo para la referencia
     QString nombre = ui->txtNombreCliente_2->text();
     QString contacto = ui->txtNumeroContacto_2->text();
     int numComensales = ui->spnNumeroComensales_2->value();
     QDateTime fechaHora = ui->dtpFechaHoraReserva_2->dateTime();
     int mesaId = ui->comboBoxMesa_2->currentData().toInt();
 
-    if (referencia.isEmpty() || nombre.isEmpty() || contacto.isEmpty() || mesaId == -1) {
-        QMessageBox::warning(this, "Error", "Por favor, complete todos los campos.");
-        return;
-    }
+    // Crear la reserva modificada
+    Reserva reservaModificada(nombre, contacto, numComensales, fechaHora, mesaId);
 
-    Mesa mesaSeleccionada;
-    bool mesaEncontrada = false;
-    for (const Mesa &mesa : gestorReservas->getMesas()) {
-        if (mesa.getId() == mesaId) {
-            mesaSeleccionada = mesa;
-            mesaEncontrada = true;
-            break;
-        }
-    }
-
-
-
-
+    // Intentar modificar la reserva utilizando el gestor de reservas
+    if (gestorReservas->modificarReserva(referencia, reservaModificada)) {
+        QMessageBox::information(this, "Éxito", "Reserva modificada con éxito.");
+        // Aquí puedes actualizar la UI si es necesario
+    } else {
+        QMessageBox::warning(this, "Error", "No se pudo modificar la reserva. Verifique los datos y vuelva a intentarlo.");
+    }*/
 }
 

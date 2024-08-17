@@ -23,12 +23,16 @@ public:
     QList<Mesa> getMesas() const;
 
 
+    Reserva* obtenerReserva(const QString &referencia); // Para obtener una reserva específica
+
+
 private:
     QList<Reserva> reservas;
     QList<Mesa> mesas;
 
     void cargarMesasDesdeArchivo(const QString &nombreArchivo); // Método para cargar mesas desde un archivo
     void guardarMesasEnArchivo(const QString &nombreArchivo);  // Método para guardar mesas en un archivo
+
 };
 
 #endif // GESTORRESERVAS_H
